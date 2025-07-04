@@ -4,11 +4,24 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { DateSelector } from '@/components/DateSelector';
+
+interface Client {
+  id: number;
+  name: string;
+  overallScore: number;
+  categories: {
+    [key: string]: number;
+  };
+  status: string;
+  lastUpdated: string;
+}
 
 export const ComplianceScoring = () => {
-  const [selectedClient, setSelectedClient] = useState(null);
+  const [selectedClient, setSelectedClient] = useState<Client | null>(null);
+  const [selectedDate, setSelectedDate] = useState<Date>(new Date());
 
-  const clients = [
+  const clients: Client[] = [
     {
       id: 1,
       name: 'Acme Corporation',
@@ -66,10 +79,17 @@ export const ComplianceScoring = () => {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 font-sf-hello">
       <div className="flex items-center justify-between">
-        <h2 className="text-2xl font-light text-gray-900">Compliance Scoring</h2>
+        <div>
+          <h2 className="text-2xl font-light text-gray-900">Daily Compliance Review</h2>
+          <p className="text-gray-600 mt-1">Review and approve new client onboarding</p>
+        </div>
         <div className="flex items-center space-x-4">
+          <DateSelector 
+            selectedDate={selectedDate} 
+            onDateChange={setSelectedDate} 
+          />
           <Input 
             placeholder="Search clients..." 
             className="w-64 border-gray-200 focus:border-gray-400 focus:ring-0"
@@ -84,7 +104,15 @@ export const ComplianceScoring = () => {
         {/* Client List */}
         <Card className="lg:col-span-1 border-0 shadow-sm">
           <CardHeader>
-            <CardTitle className="text-lg font-medium">New Clients</CardTitle>
+            <CardTitle className="text-lg font-medium">Clients for Review</CardTitle>
+            <p className="text-sm text-gray-500">
+              {selectedDate.toLocaleDateString('en-US', { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+              })}
+            </p>
           </CardHeader>
           <CardContent>
             <div className="space-y-3">
@@ -159,11 +187,14 @@ export const ComplianceScoring = () => {
 
                 {/* Action Buttons */}
                 <div className="flex space-x-3 pt-4">
-                  <Button className="flex-1 bg-blue-600 hover:bg-blue-700">
-                    Approve Client
+                  <Button className="flex-1 bg-green-600 hover:bg-green-700">
+                    ✓ Approve Client
                   </Button>
                   <Button variant="outline" className="flex-1 border-gray-200 hover:bg-gray-50">
                     Request Additional Info
+                  </Button>
+                  <Button variant="outline" className="flex-1 border-red-200 text-red-600 hover:bg-red-50">
+                    ✗ Reject
                   </Button>
                 </div>
               </div>
