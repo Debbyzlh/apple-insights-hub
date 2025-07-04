@@ -22,14 +22,14 @@ export const DashboardOverview = () => {
       {/* Metrics Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {metrics.map((metric, index) => (
-          <Card key={index} className="border-0 shadow-sm bg-gray-50/50 hover:shadow-md transition-shadow duration-200">
+          <Card key={index} className="border-0 bg-white/60 backdrop-blur-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-white/70 border border-white/20">
             <CardHeader className="pb-3">
-              <CardTitle className="text-sm font-medium text-gray-600">{metric.title}</CardTitle>
+              <CardTitle className="text-sm font-medium text-gray-600 font-sf-hello">{metric.title}</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="flex items-center justify-between">
-                <span className="text-2xl font-light text-gray-900">{metric.value}</span>
-                <span className={`text-sm font-medium ${
+                <span className="text-2xl font-light text-gray-900 font-sf-hello">{metric.value}</span>
+                <span className={`text-sm font-medium font-sf-hello ${
                   metric.trend === 'up' ? 'text-green-600' : 'text-red-600'
                 }`}>
                   {metric.change}
@@ -41,27 +41,27 @@ export const DashboardOverview = () => {
       </div>
 
       {/* Recent Client Onboarding */}
-      <Card className="border-0 shadow-sm">
+      <Card className="border-0 bg-white/60 backdrop-blur-xl shadow-lg border border-white/20">
         <CardHeader>
-          <CardTitle className="text-lg font-medium text-gray-900">Recent Client Onboarding</CardTitle>
+          <CardTitle className="text-lg font-medium text-gray-900 font-sf-hello">Recent Client Onboarding</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
             {recentClients.map((client, index) => (
-              <div key={index} className="flex items-center justify-between p-4 bg-gray-50/50 rounded-lg hover:bg-gray-100/50 transition-colors duration-200">
+              <div key={index} className="flex items-center justify-between p-4 bg-white/40 backdrop-blur-lg rounded-xl hover:bg-white/60 transition-all duration-300 border border-white/30">
                 <div className="flex-1">
-                  <h3 className="font-medium text-gray-900">{client.name}</h3>
-                  <p className="text-sm text-gray-500">{client.date}</p>
+                  <h3 className="font-medium text-gray-900 font-sf-hello">{client.name}</h3>
+                  <p className="text-sm text-gray-500 font-sf-hello">{client.date}</p>
                 </div>
                 <div className="flex items-center space-x-4">
                   <div className="text-right">
-                    <div className="text-sm font-medium text-gray-900">{client.score}%</div>
+                    <div className="text-sm font-medium text-gray-900 font-sf-hello">{client.score}%</div>
                     <Progress value={client.score} className="w-16 h-1" />
                   </div>
-                  <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                    client.status === 'Approved' ? 'bg-green-100 text-green-800' :
-                    client.status === 'Under Review' ? 'bg-yellow-100 text-yellow-800' :
-                    'bg-gray-100 text-gray-800'
+                  <span className={`px-3 py-1 rounded-full text-xs font-medium font-sf-hello backdrop-blur-sm ${
+                    client.status === 'Approved' ? 'bg-green-100/80 text-green-800 border border-green-200/50' :
+                    client.status === 'Under Review' ? 'bg-yellow-100/80 text-yellow-800 border border-yellow-200/50' :
+                    'bg-gray-100/80 text-gray-800 border border-gray-200/50'
                   }`}>
                     {client.status}
                   </span>

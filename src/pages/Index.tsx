@@ -9,7 +9,7 @@ const Index = () => {
   const [activeView, setActiveView] = useState('overview');
 
   return (
-    <div className="min-h-screen bg-white font-sf-hello">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50/50 via-white to-gray-100/30 font-sf-hello">
       <Navigation activeView={activeView} setActiveView={setActiveView} />
       
       <main className="max-w-7xl mx-auto px-6 py-8">
