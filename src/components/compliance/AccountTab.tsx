@@ -190,7 +190,7 @@ export const AccountTab = ({ selectedDate }: AccountTabProps) => {
           </p>
         </CardHeader>
         <CardContent>
-          <div className="space-y-3 max-h-96 overflow-y-auto">
+          <div className="space-y-3">
             {clients.map((client) => (
               <div
                 key={client.id}
