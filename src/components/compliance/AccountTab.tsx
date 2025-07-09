@@ -31,29 +31,133 @@ export const AccountTab = ({ selectedDate }: AccountTabProps) => {
   const clients: Client[] = [
     {
       id: 1,
-      name: 'Acme Corporation',
-      overallScore: 94,
+      name: 'TechCorp Industries',
+      overallScore: 95,
       criteria: {
-        'Financial Stability': { score: 96, details: 'Strong revenue growth and cash flow management' },
-        'Regulatory Compliance': { score: 92, details: 'Meets all regulatory requirements with minor gaps' },
-        'Market Position': { score: 95, details: 'Leading position in target market segment' },
-        'Risk Assessment': { score: 93, details: 'Low to moderate risk profile with good mitigation strategies' }
+        'Financial Health': { score: 98, details: 'Excellent financial stability with consistent revenue growth and strong cash flow management' },
+        'Compliance History': { score: 94, details: 'Outstanding compliance record with no major violations in the past 5 years' },
+        'Market Position': { score: 92, details: 'Strong market position as a technology leader with competitive advantages' },
+        'Risk Assessment': { score: 96, details: 'Low risk profile with diversified business model and stable customer base' }
       },
       status: 'Approved',
-      lastUpdated: '2024-07-02'
+      lastUpdated: '2024-07-09'
     },
     {
       id: 2,
-      name: 'Beta Industries',
-      overallScore: 87,
+      name: 'Global Solutions Ltd',
+      overallScore: 88,
       criteria: {
-        'Financial Stability': { score: 89, details: 'Stable financials with room for improvement' },
-        'Regulatory Compliance': { score: 85, details: 'Generally compliant with some areas needing attention' },
-        'Market Position': { score: 88, details: 'Strong market presence with growth potential' },
-        'Risk Assessment': { score: 86, details: 'Moderate risk with adequate controls' }
+        'Financial Health': { score: 85, details: 'Good financial position with steady growth, some seasonal fluctuations' },
+        'Compliance History': { score: 90, details: 'Generally compliant with minor issues resolved quickly' },
+        'Market Position': { score: 89, details: 'Well-established market presence with room for expansion' },
+        'Risk Assessment': { score: 88, details: 'Moderate risk due to market concentration but good management practices' }
       },
       status: 'Under Review',
-      lastUpdated: '2024-07-01'
+      lastUpdated: '2024-07-08'
+    },
+    {
+      id: 3,
+      name: 'Innovation Partners',
+      overallScore: 92,
+      criteria: {
+        'Financial Health': { score: 90, details: 'Strong financial metrics with investment in R&D showing future potential' },
+        'Compliance History': { score: 95, details: 'Excellent compliance track record with proactive approach to regulations' },
+        'Market Position': { score: 91, details: 'Innovative market approach with growing customer base' },
+        'Risk Assessment': { score: 92, details: 'Well-managed risks with strong governance structure' }
+      },
+      status: 'Approved',
+      lastUpdated: '2024-07-08'
+    },
+    {
+      id: 4,
+      name: 'Future Dynamics',
+      overallScore: 85,
+      criteria: {
+        'Financial Health': { score: 82, details: 'Adequate financial health with recent improvements in profitability' },
+        'Compliance History': { score: 87, details: 'Good compliance record with some historical issues now resolved' },
+        'Market Position': { score: 86, details: 'Developing market position with growth potential' },
+        'Risk Assessment': { score: 85, details: 'Manageable risk level with appropriate mitigation strategies' }
+      },
+      status: 'Pending',
+      lastUpdated: '2024-07-07'
+    },
+    {
+      id: 5,
+      name: 'Digital Ventures Inc',
+      overallScore: 91,
+      criteria: {
+        'Financial Health': { score: 93, details: 'Strong financial performance with consistent profitability' },
+        'Compliance History': { score: 89, details: 'Good compliance standing with regular audits passed' },
+        'Market Position': { score: 90, details: 'Growing market share in digital transformation sector' },
+        'Risk Assessment': { score: 92, details: 'Low to moderate risk with strong operational controls' }
+      },
+      status: 'Approved',
+      lastUpdated: '2024-07-07'
+    },
+    {
+      id: 6,
+      name: 'Enterprise Systems',
+      overallScore: 87,
+      criteria: {
+        'Financial Health': { score: 84, details: 'Stable financial condition with consistent revenue streams' },
+        'Compliance History': { score: 91, details: 'Strong compliance culture with regular training programs' },
+        'Market Position': { score: 86, details: 'Established enterprise solutions provider with loyal client base' },
+        'Risk Assessment': { score: 87, details: 'Moderate risk profile with good contingency planning' }
+      },
+      status: 'Under Review',
+      lastUpdated: '2024-07-06'
+    },
+    {
+      id: 7,
+      name: 'CloudTech Solutions',
+      overallScore: 94,
+      criteria: {
+        'Financial Health': { score: 96, details: 'Excellent financial health with rapid growth in cloud services' },
+        'Compliance History': { score: 93, details: 'Strong compliance record with cloud security certifications' },
+        'Market Position': { score: 94, details: 'Leading position in cloud infrastructure market' },
+        'Risk Assessment': { score: 93, details: 'Well-managed technology and operational risks' }
+      },
+      status: 'Approved',
+      lastUpdated: '2024-07-06'
+    },
+    {
+      id: 8,
+      name: 'Data Analytics Pro',
+      overallScore: 89,
+      criteria: {
+        'Financial Health': { score: 87, details: 'Good financial performance with growing analytics business' },
+        'Compliance History': { score: 92, details: 'Excellent data privacy compliance with GDPR certification' },
+        'Market Position': { score: 88, details: 'Strong position in business intelligence and analytics' },
+        'Risk Assessment': { score: 89, details: 'Low risk with robust data security measures' }
+      },
+      status: 'Approved',
+      lastUpdated: '2024-07-05'
+    },
+    {
+      id: 9,
+      name: 'Smart Business Hub',
+      overallScore: 83,
+      criteria: {
+        'Financial Health': { score: 80, details: 'Improving financial metrics after restructuring efforts' },
+        'Compliance History': { score: 85, details: 'Compliance improvements noted with new management team' },
+        'Market Position': { score: 84, details: 'Rebuilding market position with new service offerings' },
+        'Risk Assessment': { score: 83, details: 'Moderate risk due to recent organizational changes' }
+      },
+      status: 'Pending',
+      lastUpdated: '2024-07-05'
+    },
+    {
+      id: 10,
+      name: 'NextGen Technologies',
+      overallScore: 95,
+      criteria: {
+        'Financial Health': { score: 97, details: 'Outstanding financial performance with innovative revenue models' },
+        'Compliance History': { score: 94, details: 'Exemplary compliance record with industry best practices' },
+        'Market Position': { score: 95, details: 'Market leader in emerging technologies with strong IP portfolio' },
+        'Risk Assessment': { score: 94, details: 'Very low risk with diversified technology investments' }
+      },
+      status: 'Approved',
+      lastUpdated: '2024-07-04'
     }
   ];
 
@@ -70,7 +174,6 @@ export const AccountTab = ({ selectedDate }: AccountTabProps) => {
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-      {/* Client List */}
       <Card className="lg:col-span-1 border-0 shadow-sm bg-white/60 backdrop-blur-xl">
         <CardHeader>
           <CardTitle className="text-lg font-medium flex items-center gap-2">
@@ -87,7 +190,7 @@ export const AccountTab = ({ selectedDate }: AccountTabProps) => {
           </p>
         </CardHeader>
         <CardContent>
-          <div className="space-y-3">
+          <div className="space-y-3 max-h-96 overflow-y-auto">
             {clients.map((client) => (
               <div
                 key={client.id}
@@ -114,7 +217,6 @@ export const AccountTab = ({ selectedDate }: AccountTabProps) => {
         </CardContent>
       </Card>
 
-      {/* Detailed View */}
       <Card className="lg:col-span-2 border-0 shadow-sm bg-white/60 backdrop-blur-xl">
         <CardHeader>
           <CardTitle className="text-lg font-medium">
@@ -124,7 +226,6 @@ export const AccountTab = ({ selectedDate }: AccountTabProps) => {
         <CardContent>
           {selectedClient ? (
             <div className="space-y-6">
-              {/* Overall Score - Prominent Display */}
               <div className="text-center p-8 bg-white/40 backdrop-blur-lg rounded-2xl shadow-lg border border-white/30">
                 <div className={`text-6xl font-light mb-3 ${getScoreColor(selectedClient.overallScore)}`}>
                   {selectedClient.overallScore}
@@ -132,7 +233,6 @@ export const AccountTab = ({ selectedDate }: AccountTabProps) => {
                 <p className="text-lg text-gray-600 font-medium">Overall Account Score</p>
               </div>
 
-              {/* Criteria Breakdown - Clickable */}
               <div className="space-y-3">
                 <h3 className="font-medium text-gray-900 mb-4">Criteria Breakdown</h3>
                 <div className="grid grid-cols-2 gap-3">
@@ -154,7 +254,6 @@ export const AccountTab = ({ selectedDate }: AccountTabProps) => {
                 </div>
               </div>
 
-              {/* Action Buttons */}
               <div className="flex space-x-3 pt-4">
                 <Button className="flex-1 bg-green-600 hover:bg-green-700 shadow-lg">
                   ✓ Approve Client
@@ -170,7 +269,7 @@ export const AccountTab = ({ selectedDate }: AccountTabProps) => {
           ) : (
             <div className="text-center py-12 text-gray-500">
               <IdCard className="h-12 w-12 mx-auto mb-4 opacity-50" />
-              <p>Select an account client to view detailed compliance analysis</p>
+              <p>Select a client to view detailed analysis</p>
             </div>
           )}
         </CardContent>
