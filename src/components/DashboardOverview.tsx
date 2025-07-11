@@ -8,6 +8,17 @@ import { departmentMetrics, resellerData, recentClients, riskyAccounts } from '@
 
 export const DashboardOverview = () => {
   const [showRiskyAccounts, setShowRiskyAccounts] = useState(false);
+  const [selectedReseller, setSelectedReseller] = useState<any>(null);
+  const [showResellerModal, setShowResellerModal] = useState(false);
+
+  const handleResellerClick = (reseller: any) => {
+    setSelectedReseller(reseller);
+    setShowResellerModal(true);
+  };
+
+  const getResellerAccounts = (resellerId: number) => {
+    return recentClients.filter(client => client.resellerId === resellerId);
+  };
 
   const handleBlacklist = (clientName: string) => {
     console.log(`Adding ${clientName} to blacklist`);
@@ -159,7 +170,11 @@ export const DashboardOverview = () => {
               };
 
               return (
-                <div key={reseller.id} className="p-3 bg-white/40 backdrop-blur-lg rounded-xl hover:bg-white/60 transition-all duration-300 border border-white/30">
+                <div 
+                  key={reseller.id} 
+                  className="p-3 bg-white/40 backdrop-blur-lg rounded-xl hover:bg-white/60 transition-all duration-300 border border-white/30 cursor-pointer hover:shadow-lg"
+                  onClick={() => handleResellerClick(reseller)}
+                >
                   <div className="flex items-center gap-2 mb-2">
                     <div className={`w-3 h-3 rounded-full ${getScoreColor(reseller.score)}`}></div>
                     <h3 className="font-medium text-gray-900 font-sf-hello text-sm">{reseller.name}</h3>
@@ -181,6 +196,85 @@ export const DashboardOverview = () => {
           </div>
         </CardContent>
       </Card>
+
+      {/* Reseller Detail Modal */}
+      {showResellerModal && selectedReseller && (
+        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+          <Card className="w-full max-w-6xl max-h-[90vh] overflow-y-auto border-0 bg-white/95 backdrop-blur-xl shadow-2xl">
+            <CardHeader className="flex flex-row items-center justify-between">
+              <div>
+                <CardTitle className="text-xl font-medium text-gray-900 font-sf-hello flex items-center gap-3">
+                  <div className={`w-4 h-4 rounded-full ${
+                    selectedReseller.score >= 95 ? 'bg-green-500' : 
+                    selectedReseller.score >= 90 ? 'bg-yellow-500' : 'bg-red-500'
+                  }`}></div>
+                  {selectedReseller.name} Performance Details
+                </CardTitle>
+                <p className="text-sm text-gray-500 mt-1">Score: {selectedReseller.score} ({selectedReseller.scoreChange})</p>
+              </div>
+              <Button 
+                variant="ghost" 
+                size="sm" 
+                onClick={() => setShowResellerModal(false)}
+                className="h-8 w-8 p-0"
+              >
+                <X className="h-4 w-4" />
+              </Button>
+            </CardHeader>
+            <CardContent>
+              {/* Reseller Metrics Grid */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                <div className="p-4 bg-white/40 backdrop-blur-lg rounded-xl border border-white/30">
+                  <h4 className="text-sm font-medium text-gray-600 mb-1">SO/ST/SF Alignment</h4>
+                  <p className="text-xl font-bold text-gray-900">{selectedReseller.metrics.alignment}</p>
+                </div>
+                <div className="p-4 bg-white/40 backdrop-blur-lg rounded-xl border border-white/30">
+                  <h4 className="text-sm font-medium text-gray-600 mb-1">UB Rate</h4>
+                  <p className="text-xl font-bold text-gray-900">{selectedReseller.metrics.ubRate}</p>
+                </div>
+                <div className="p-4 bg-white/40 backdrop-blur-lg rounded-xl border border-white/30">
+                  <h4 className="text-sm font-medium text-gray-600 mb-1">Market Purchase</h4>
+                  <p className="text-xl font-bold text-gray-900">{selectedReseller.metrics.marketPurchase}</p>
+                </div>
+                <div className="p-4 bg-white/40 backdrop-blur-lg rounded-xl border border-white/30">
+                  <h4 className="text-sm font-medium text-gray-600 mb-1">VAT vs SO</h4>
+                  <p className="text-xl font-bold text-gray-900">{selectedReseller.metrics.vatVsSo}</p>
+                </div>
+              </div>
+
+              {/* Individual Accounts */}
+              <div>
+                <h3 className="text-lg font-medium text-gray-900 mb-4">Individual Accounts ({getResellerAccounts(selectedReseller.id).length})</h3>
+                <div className="grid gap-3">
+                  {getResellerAccounts(selectedReseller.id).map((account, index) => (
+                    <div key={index} className="p-4 bg-white/40 backdrop-blur-lg rounded-xl border border-white/30 hover:bg-white/60 transition-all duration-300">
+                      <div className="flex items-center justify-between">
+                        <div className="flex-1">
+                          <h4 className="font-medium text-gray-900">{account.name}</h4>
+                          <p className="text-sm text-gray-500">{account.date}</p>
+                        </div>
+                        <div className="flex items-center space-x-4">
+                          <div className="text-right">
+                            <div className="text-sm font-medium text-gray-900">{account.score}%</div>
+                            <Progress value={account.score} className="w-16 h-1" />
+                          </div>
+                          <span className={`px-3 py-1 rounded-full text-xs font-medium backdrop-blur-sm ${
+                            account.status === 'Approved' ? 'bg-green-100/80 text-green-800 border border-green-200/50' :
+                            account.status === 'Under Review' ? 'bg-yellow-100/80 text-yellow-800 border border-yellow-200/50' :
+                            'bg-gray-100/80 text-gray-800 border border-gray-200/50'
+                          }`}>
+                            {account.status}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      )}
 
       {/* Recent Client Onboarding - Account level data */}
       <Card className="border-0 bg-white/60 backdrop-blur-xl shadow-lg border border-white/20">
