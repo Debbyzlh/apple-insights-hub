@@ -4,86 +4,10 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
 import { Button } from '@/components/ui/button';
 import { AlertTriangle, Shield, Eye, X } from 'lucide-react';
+import { departmentMetrics, resellerData, recentClients, riskyAccounts } from '@/data/sampleData';
 
 export const DashboardOverview = () => {
   const [showRiskyAccounts, setShowRiskyAccounts] = useState(false);
-
-  // Department level data (highest level)
-  const departmentMetrics = [
-    { title: 'Risky Accounts', value: '12', change: '+3', trend: 'up', isRisky: true, isClickable: true },
-    { title: 'SO/ST/SF Alignment', value: '94.7%', change: '+2.3%', trend: 'up' },
-    { title: 'UB Rate', value: '89.3%', change: '+1.2%', trend: 'up' },
-    { title: 'Market Purchase', value: '84', change: '+15.6%', trend: 'up' },
-    { title: 'VAT vs SO', value: '267', change: '+0.8%', trend: 'up' },
-  ];
-
-  // Reseller level data (10 resellers)
-  const resellerData = [
-    { id: 1, name: 'TechFlow Partners', score: 94, accounts: 15, revenue: '$2.4M', status: 'Active' },
-    { id: 2, name: 'Global Solutions Inc', score: 89, accounts: 12, revenue: '$1.8M', status: 'Active' },
-    { id: 3, name: 'Digital Ventures Ltd', score: 92, accounts: 18, revenue: '$3.1M', status: 'Active' },
-    { id: 4, name: 'Enterprise Systems', score: 87, accounts: 9, revenue: '$1.5M', status: 'Review' },
-    { id: 5, name: 'CloudTech Solutions', score: 91, accounts: 14, revenue: '$2.2M', status: 'Active' },
-    { id: 6, name: 'Innovation Partners', score: 88, accounts: 11, revenue: '$1.9M', status: 'Active' },
-    { id: 7, name: 'Smart Business Hub', score: 85, accounts: 8, revenue: '$1.3M', status: 'Review' },
-    { id: 8, name: 'NextGen Technologies', score: 93, accounts: 16, revenue: '$2.7M', status: 'Active' },
-    { id: 9, name: 'Future Dynamics Corp', score: 86, accounts: 10, revenue: '$1.6M', status: 'Active' },
-    { id: 10, name: 'AI Solutions Group', score: 90, accounts: 13, revenue: '$2.0M', status: 'Active' },
-  ];
-
-  const recentClients = [
-    { name: 'TechCorp Industries', score: 96, status: 'Approved', date: '2024-07-09' },
-    { name: 'Global Solutions Ltd', score: 88, status: 'Under Review', date: '2024-07-08' },
-    { name: 'Innovation Partners', score: 92, status: 'Approved', date: '2024-07-08' },
-    { name: 'Future Dynamics', score: 85, status: 'Pending', date: '2024-07-07' },
-    { name: 'Digital Ventures Inc', score: 91, status: 'Approved', date: '2024-07-07' },
-    { name: 'Enterprise Systems', score: 87, status: 'Under Review', date: '2024-07-06' },
-    { name: 'CloudTech Solutions', score: 94, status: 'Approved', date: '2024-07-06' },
-    { name: 'Data Analytics Pro', score: 89, status: 'Approved', date: '2024-07-05' },
-    { name: 'Smart Business Hub', score: 83, status: 'Pending', date: '2024-07-05' },
-    { name: 'NextGen Technologies', score: 95, status: 'Approved', date: '2024-07-04' },
-    { name: 'Quantum Computing Ltd', score: 90, status: 'Approved', date: '2024-07-04' },
-    { name: 'AI Solutions Group', score: 86, status: 'Under Review', date: '2024-07-03' },
-    { name: 'Blockchain Dynamics', score: 93, status: 'Approved', date: '2024-07-03' },
-    { name: 'Cybersecurity Plus', score: 88, status: 'Approved', date: '2024-07-02' },
-    { name: 'Mobile First Corp', score: 84, status: 'Pending', date: '2024-07-02' },
-    { name: 'Green Energy Tech', score: 91, status: 'Approved', date: '2024-07-01' },
-    { name: 'Financial Systems Pro', score: 87, status: 'Under Review', date: '2024-07-01' },
-    { name: 'Healthcare Innovations', score: 92, status: 'Approved', date: '2024-06-30' },
-  ];
-
-  const riskyAccounts = [
-    {
-      name: 'Suspicious Trading Corp',
-      riskLevel: 'High',
-      reasons: ['Unusual transaction patterns', 'Missing compliance documents', 'Frequent policy violations'],
-      lastActivity: '2024-07-08'
-    },
-    {
-      name: 'Red Flag Industries',
-      riskLevel: 'Critical',
-      reasons: ['Failed KYC verification', 'Connection to sanctioned entities', 'Suspicious fund sources'],
-      lastActivity: '2024-07-07'
-    },
-    {
-      name: 'Warning Signals Ltd',
-      riskLevel: 'Medium',
-      reasons: ['Late payment history', 'Inconsistent reporting', 'Location in high-risk jurisdiction'],
-      lastActivity: '2024-07-06'
-    },
-    {
-      name: 'Alert Systems Inc',
-      riskLevel: 'High',
-      reasons: ['Rapid account changes', 'Unusual beneficiary structures', 'PEP connections'],
-      lastActivity: '2024-07-05'
-    },
-    {
-      name: 'Flagged Ventures',
-      riskLevel: 'Medium',
-      reasons: ['Volume inconsistencies', 'Geographic risk factors', 'Regulatory warnings'],
-      lastActivity: '2024-07-04'
-    }
-  ];
 
   const handleBlacklist = (clientName: string) => {
     console.log(`Adding ${clientName} to blacklist`);
@@ -216,38 +140,44 @@ export const DashboardOverview = () => {
 
       {/* Reseller Performance Overview */}
       <Card className="border-0 bg-white/60 backdrop-blur-xl shadow-lg border border-white/20">
-        <CardHeader>
-          <CardTitle className="text-lg font-medium text-gray-900 font-sf-hello">Reseller Performance Overview</CardTitle>
-          <p className="text-sm text-gray-500">Quick glance at all 10 resellers</p>
+        <CardHeader className="pb-4">
+          <CardTitle className="text-lg font-medium text-gray-900 font-sf-hello">Reseller Performance</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {resellerData.map((reseller) => (
-              <div key={reseller.id} className="p-4 bg-white/40 backdrop-blur-lg rounded-xl hover:bg-white/60 transition-all duration-300 border border-white/30">
-                <div className="flex items-center justify-between mb-2">
-                  <h3 className="font-medium text-gray-900 font-sf-hello">{reseller.name}</h3>
-                  <span className={`px-2 py-1 rounded-full text-xs font-medium font-sf-hello ${
-                    reseller.status === 'Active' ? 'bg-green-100/80 text-green-800' : 'bg-yellow-100/80 text-yellow-800'
-                  }`}>
-                    {reseller.status}
-                  </span>
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
+            {resellerData.map((reseller) => {
+              const getScoreColor = (score: number) => {
+                if (score >= 95) return 'bg-green-500';
+                if (score >= 90) return 'bg-yellow-500';
+                return 'bg-red-500';
+              };
+              
+              const getScoreTextColor = (score: number) => {
+                if (score >= 95) return 'text-green-600';
+                if (score >= 90) return 'text-yellow-600';
+                return 'text-red-600';
+              };
+
+              return (
+                <div key={reseller.id} className="p-3 bg-white/40 backdrop-blur-lg rounded-xl hover:bg-white/60 transition-all duration-300 border border-white/30">
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className={`w-3 h-3 rounded-full ${getScoreColor(reseller.score)}`}></div>
+                    <h3 className="font-medium text-gray-900 font-sf-hello text-sm">{reseller.name}</h3>
+                  </div>
+                  <div className="space-y-1">
+                    <div className="flex items-center justify-between">
+                      <span className={`text-lg font-bold ${getScoreTextColor(reseller.score)}`}>{reseller.score}</span>
+                      <span className={`text-xs font-medium ${
+                        reseller.scoreChange.startsWith('+') ? 'text-green-600' : 'text-red-600'
+                      }`}>
+                        {reseller.scoreChange}
+                      </span>
+                    </div>
+                    <p className="text-xs text-gray-500">{reseller.accounts} accounts</p>
+                  </div>
                 </div>
-                <div className="grid grid-cols-3 gap-4 text-sm">
-                  <div>
-                    <p className="text-gray-500">Score</p>
-                    <p className="font-medium text-gray-900">{reseller.score}</p>
-                  </div>
-                  <div>
-                    <p className="text-gray-500">Accounts</p>
-                    <p className="font-medium text-gray-900">{reseller.accounts}</p>
-                  </div>
-                  <div>
-                    <p className="text-gray-500">Revenue</p>
-                    <p className="font-medium text-gray-900">{reseller.revenue}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </CardContent>
       </Card>

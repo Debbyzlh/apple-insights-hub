@@ -11,16 +11,16 @@ export const departmentMetrics = [
 
 // Reseller level data (10 resellers total)
 export const resellerData = [
-  { id: 1, name: 'TechFlow Partners', score: 94, accounts: 15, revenue: '$2.4M', status: 'Active' },
-  { id: 2, name: 'Global Solutions Inc', score: 89, accounts: 12, revenue: '$1.8M', status: 'Active' },
-  { id: 3, name: 'Digital Ventures Ltd', score: 92, accounts: 18, revenue: '$3.1M', status: 'Active' },
-  { id: 4, name: 'Enterprise Systems', score: 87, accounts: 9, revenue: '$1.5M', status: 'Review' },
-  { id: 5, name: 'CloudTech Solutions', score: 91, accounts: 14, revenue: '$2.2M', status: 'Active' },
-  { id: 6, name: 'Innovation Partners', score: 88, accounts: 11, revenue: '$1.9M', status: 'Active' },
-  { id: 7, name: 'Smart Business Hub', score: 85, accounts: 8, revenue: '$1.3M', status: 'Review' },
-  { id: 8, name: 'NextGen Technologies', score: 93, accounts: 16, revenue: '$2.7M', status: 'Active' },
-  { id: 9, name: 'Future Dynamics Corp', score: 86, accounts: 10, revenue: '$1.6M', status: 'Active' },
-  { id: 10, name: 'AI Solutions Group', score: 90, accounts: 13, revenue: '$2.0M', status: 'Active' },
+  { id: 1, name: 'Reseller 1', score: 96, accounts: 15, scoreChange: '+2.1', status: 'Active' },
+  { id: 2, name: 'Reseller 2', score: 89, accounts: 12, scoreChange: '-1.3', status: 'Active' },
+  { id: 3, name: 'Reseller 3', score: 92, accounts: 18, scoreChange: '+0.8', status: 'Active' },
+  { id: 4, name: 'Reseller 4', score: 87, accounts: 9, scoreChange: '-2.1', status: 'Review' },
+  { id: 5, name: 'Reseller 5', score: 94, accounts: 14, scoreChange: '+1.5', status: 'Active' },
+  { id: 6, name: 'Reseller 6', score: 88, accounts: 11, scoreChange: '+0.3', status: 'Active' },
+  { id: 7, name: 'Reseller 7', score: 85, accounts: 8, scoreChange: '-1.8', status: 'Review' },
+  { id: 8, name: 'Reseller 8', score: 97, accounts: 16, scoreChange: '+3.2', status: 'Active' },
+  { id: 9, name: 'Reseller 9', score: 86, accounts: 10, scoreChange: '-0.9', status: 'Active' },
+  { id: 10, name: 'Reseller 10', score: 90, accounts: 13, scoreChange: '+1.7', status: 'Active' },
 ];
 
 // Account level data (lowest level, individual clients)
