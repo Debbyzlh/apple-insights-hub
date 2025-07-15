@@ -11,16 +11,17 @@ export const departmentMetrics = [
 
 // Reseller level data (10 resellers total)
 export const resellerData = [
-  { id: 1, name: 'Reseller 1', score: 96, accounts: 15, scoreChange: '+2.1', status: 'Active', metrics: { alignment: '96.2%', ubRate: '88.7%', marketPurchase: '12', vatVsSo: '34' } },
-  { id: 2, name: 'Reseller 2', score: 89, accounts: 12, scoreChange: '-1.3', status: 'Active', metrics: { alignment: '91.5%', ubRate: '90.3%', marketPurchase: '8', vatVsSo: '28' } },
-  { id: 3, name: 'Reseller 3', score: 92, accounts: 18, scoreChange: '+0.8', status: 'Active', metrics: { alignment: '94.1%', ubRate: '87.9%', marketPurchase: '15', vatVsSo: '42' } },
-  { id: 4, name: 'Reseller 4', score: 87, accounts: 9, scoreChange: '-2.1', status: 'Review', metrics: { alignment: '89.3%', ubRate: '92.1%', marketPurchase: '6', vatVsSo: '19' } },
-  { id: 5, name: 'Reseller 5', score: 94, accounts: 14, scoreChange: '+1.5', status: 'Active', metrics: { alignment: '95.7%', ubRate: '89.4%', marketPurchase: '11', vatVsSo: '31' } },
-  { id: 6, name: 'Reseller 6', score: 88, accounts: 11, scoreChange: '+0.3', status: 'Active', metrics: { alignment: '90.8%', ubRate: '91.2%', marketPurchase: '9', vatVsSo: '25' } },
-  { id: 7, name: 'Reseller 7', score: 85, accounts: 8, scoreChange: '-1.8', status: 'Review', metrics: { alignment: '87.9%', ubRate: '93.5%', marketPurchase: '5', vatVsSo: '17' } },
-  { id: 8, name: 'Reseller 8', score: 97, accounts: 16, scoreChange: '+3.2', status: 'Active', metrics: { alignment: '97.4%', ubRate: '86.8%', marketPurchase: '13', vatVsSo: '38' } },
-  { id: 9, name: 'Reseller 9', score: 86, accounts: 10, scoreChange: '-0.9', status: 'Active', metrics: { alignment: '88.7%', ubRate: '94.1%', marketPurchase: '7', vatVsSo: '22' } },
-  { id: 10, name: 'Reseller 10', score: 90, accounts: 13, scoreChange: '+1.7', status: 'Active', metrics: { alignment: '92.3%', ubRate: '90.8%', marketPurchase: '10', vatVsSo: '29' } },
+  { id: 1, name: '倍升', score: 96, accounts: 15, scoreChange: '+2.1', status: 'Active', metrics: { alignment: '96.2%', ubRate: '88.7%', marketPurchase: '12', vatVsSo: '34' } },
+  { id: 2, name: '和诚', score: 89, accounts: 12, scoreChange: '-1.3', status: 'Active', metrics: { alignment: '91.5%', ubRate: '90.3%', marketPurchase: '8', vatVsSo: '28' } },
+  { id: 3, name: '大恒', score: 92, accounts: 18, scoreChange: '+0.8', status: 'Active', metrics: { alignment: '94.1%', ubRate: '87.9%', marketPurchase: '15', vatVsSo: '42' } },
+  { id: 4, name: '方正', score: 87, accounts: 9, scoreChange: '-2.1', status: 'Review', metrics: { alignment: '89.3%', ubRate: '92.1%', marketPurchase: '6', vatVsSo: '19' } },
+  { id: 5, name: '易信', score: 94, accounts: 14, scoreChange: '+1.5', status: 'Active', metrics: { alignment: '95.7%', ubRate: '89.4%', marketPurchase: '11', vatVsSo: '31' } },
+  { id: 6, name: '智懋', score: 88, accounts: 11, scoreChange: '+0.3', status: 'Active', metrics: { alignment: '90.8%', ubRate: '91.2%', marketPurchase: '9', vatVsSo: '25' } },
+  { id: 7, name: '神码', score: 85, accounts: 8, scoreChange: '-1.8', status: 'Review', metrics: { alignment: '87.9%', ubRate: '93.5%', marketPurchase: '5', vatVsSo: '17' } },
+  { id: 8, name: '索电', score: 97, accounts: 16, scoreChange: '+3.2', status: 'Active', metrics: { alignment: '97.4%', ubRate: '86.8%', marketPurchase: '13', vatVsSo: '38' } },
+  { id: 9, name: '蜂云', score: 86, accounts: 10, scoreChange: '-0.9', status: 'Active', metrics: { alignment: '88.7%', ubRate: '94.1%', marketPurchase: '7', vatVsSo: '22' } },
+  { id: 10, name: '佳杰', score: 90, accounts: 13, scoreChange: '+1.7', status: 'Active', metrics: { alignment: '92.3%', ubRate: '90.8%', marketPurchase: '10', vatVsSo: '29' } },
+  { id: 11, name: '新博航', score: 88, accounts: 1, scoreChange: '+0.7', status: 'Active', metrics: { alignment: '90.3%', ubRate: '97.8%', marketPurchase: '2', vatVsSo: '10' } },
 ];
 
 // Account level data (lowest level, individual clients)
