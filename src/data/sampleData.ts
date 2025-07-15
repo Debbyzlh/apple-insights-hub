@@ -26,24 +26,24 @@ export const resellerData = [
 
 // Account level data (lowest level, individual clients)
 export const recentClients = [
-  { name: 'TechCorp Industries', score: 96, status: 'Approved', date: '2024-07-09', resellerId: 1 },
-  { name: 'Global Solutions Ltd', score: 88, status: 'Under Review', date: '2024-07-08', resellerId: 2 },
-  { name: 'Innovation Partners', score: 92, status: 'Approved', date: '2024-07-08', resellerId: 6 },
-  { name: 'Future Dynamics', score: 85, status: 'Pending', date: '2024-07-07', resellerId: 9 },
-  { name: 'Digital Ventures Inc', score: 91, status: 'Approved', date: '2024-07-07', resellerId: 3 },
-  { name: 'Enterprise Systems', score: 87, status: 'Under Review', date: '2024-07-06', resellerId: 4 },
-  { name: 'CloudTech Solutions', score: 94, status: 'Approved', date: '2024-07-06', resellerId: 5 },
-  { name: 'Data Analytics Pro', score: 89, status: 'Approved', date: '2024-07-05', resellerId: 1 },
-  { name: 'Smart Business Hub', score: 83, status: 'Pending', date: '2024-07-05', resellerId: 7 },
-  { name: 'NextGen Technologies', score: 95, status: 'Approved', date: '2024-07-04', resellerId: 8 },
-  { name: 'Quantum Computing Ltd', score: 90, status: 'Approved', date: '2024-07-04', resellerId: 1 },
-  { name: 'AI Solutions Group', score: 86, status: 'Under Review', date: '2024-07-03', resellerId: 10 },
-  { name: 'Blockchain Dynamics', score: 93, status: 'Approved', date: '2024-07-03', resellerId: 2 },
-  { name: 'Cybersecurity Plus', score: 88, status: 'Approved', date: '2024-07-02', resellerId: 3 },
-  { name: 'Mobile First Corp', score: 84, status: 'Pending', date: '2024-07-02', resellerId: 4 },
-  { name: 'Green Energy Tech', score: 91, status: 'Approved', date: '2024-07-01', resellerId: 5 },
-  { name: 'Financial Systems Pro', score: 87, status: 'Under Review', date: '2024-07-01', resellerId: 6 },
-  { name: 'Healthcare Innovations', score: 92, status: 'Approved', date: '2024-06-30', resellerId: 7 },
+  { name: 'TechCorp Industries', score: 96, status: 'Approved', date: '2025-07-09', resellerId: 1 },
+  { name: 'Global Solutions Ltd', score: 88, status: 'Under Review', date: '2025-07-08', resellerId: 2 },
+  { name: 'Innovation Partners', score: 92, status: 'Approved', date: '2025-07-08', resellerId: 6 },
+  { name: 'Future Dynamics', score: 85, status: 'Pending', date: '2025-07-07', resellerId: 9 },
+  { name: 'Digital Ventures Inc', score: 91, status: 'Approved', date: '2025-07-07', resellerId: 3 },
+  { name: 'Enterprise Systems', score: 87, status: 'Under Review', date: '2025-07-06', resellerId: 4 },
+  { name: 'CloudTech Solutions', score: 94, status: 'Approved', date: '2025-07-06', resellerId: 5 },
+  { name: 'Data Analytics Pro', score: 89, status: 'Approved', date: '2025-07-05', resellerId: 1 },
+  { name: 'Smart Business Hub', score: 83, status: 'Pending', date: '2025-07-05', resellerId: 7 },
+  { name: 'NextGen Technologies', score: 95, status: 'Approved', date: '2025-07-04', resellerId: 8 },
+  { name: 'Quantum Computing Ltd', score: 90, status: 'Approved', date: '2025-07-04', resellerId: 1 },
+  { name: 'AI Solutions Group', score: 86, status: 'Under Review', date: '2025-07-03', resellerId: 10 },
+  { name: 'Blockchain Dynamics', score: 93, status: 'Approved', date: '2025-07-03', resellerId: 2 },
+  { name: 'Cybersecurity Plus', score: 88, status: 'Approved', date: '2025-07-02', resellerId: 3 },
+  { name: 'Mobile First Corp', score: 84, status: 'Pending', date: '2025-07-02', resellerId: 4 },
+  { name: 'Green Energy Tech', score: 91, status: 'Approved', date: '2025-07-01', resellerId: 5 },
+  { name: 'Financial Systems Pro', score: 87, status: 'Under Review', date: '2025-07-01', resellerId: 6 },
+  { name: 'Healthcare Innovations', score: 92, status: 'Approved', date: '2025-06-30', resellerId: 7 },
 ];
 
 // Risky accounts data
@@ -52,35 +52,35 @@ export const riskyAccounts = [
     name: 'Suspicious Trading Corp',
     riskLevel: 'High',
     reasons: ['Unusual transaction patterns', 'Missing compliance documents', 'Frequent policy violations'],
-    lastActivity: '2024-07-08',
+    lastActivity: '2025-07-08',
     resellerId: 4
   },
   {
     name: 'Red Flag Industries',
     riskLevel: 'Critical',
     reasons: ['Failed KYC verification', 'Connection to sanctioned entities', 'Suspicious fund sources'],
-    lastActivity: '2024-07-07',
+    lastActivity: '2025-07-07',
     resellerId: 7
   },
   {
     name: 'Warning Signals Ltd',
     riskLevel: 'Medium',
     reasons: ['Late payment history', 'Inconsistent reporting', 'Location in high-risk jurisdiction'],
-    lastActivity: '2024-07-06',
+    lastActivity: '2025-07-06',
     resellerId: 2
   },
   {
     name: 'Alert Systems Inc',
     riskLevel: 'High',
     reasons: ['Rapid account changes', 'Unusual beneficiary structures', 'PEP connections'],
-    lastActivity: '2024-07-05',
+    lastActivity: '2025-07-05',
     resellerId: 9
   },
   {
     name: 'Flagged Ventures',
     riskLevel: 'Medium',
     reasons: ['Volume inconsistencies', 'Geographic risk factors', 'Regulatory warnings'],
-    lastActivity: '2024-07-04',
+    lastActivity: '2025-07-04',
     resellerId: 3
   }
 ];
